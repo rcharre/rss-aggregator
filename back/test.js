@@ -4,7 +4,7 @@ const SourceService = require('./src/services/SourceService')
 
 let sourceService = new SourceService()
 let source = new Source({
-    name: 'Le Monde - international'
+    name: 'Le Monde - international',
     url: "https://www.lemonde.fr/international/",
     parsing: {
         articleQuery: ".thread",
@@ -17,7 +17,6 @@ let source = new Source({
 async function main() {
     await mongoose.connect('mongodb://localhost:27017/test')
     await sourceService._extract(source)
-    process.exit()
 }
 
 main()

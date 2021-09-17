@@ -1,68 +1,32 @@
-const puppeteer = require('puppeteer')
 const Article = require('../domain/Article')
 const Source = require('../domain/Source')
+const ExtractionRequestPublisher = require('../rabbitmq/publishers/ExtractionRequestPublisher')
+const ExtractionResultConsumer = require('../rabbitmq/consumers/ExtractionResultConsumer')
+const { json } = require('express')
 
 class SourceService {
     constructor() {
-        setInterval(() => {
-            this.startExtraction()
-        }, 1800000)
+        this.extractionRequestPublisher = new ExtractionRequestPublisher('amqp://localhost')
+        this.etractionResultConsumer = new ExtractionResultConsumer(
+            'amqp://localhost',
+            message => this._handleResult(JSON.parse(message.content.toString())))
+
+        setInterval(this.startExtraction, 1800000)
+        this.startExtraction()
     }
 
     async startExtraction() {
         Source.find({})
-            .then(sources => {
-                sources.forEach(source => this._extract(source))
-            })
+            .then(sources => { sources.forEach(this._extract) })
     }
 
     async _extract(source) {
-        console.log("Start extraction of source " + source.name)
-        let result = []
-        let browser = await puppeteer.connect({
-            browserWSEndpoint: 'ws://localhost:3000'
-        })
-
-        let pages = await browser.pages
-        let page = pages.length > 0 ? pages[0] : await browser.newPage()
-
-        await page.goto(source.url)
-        try {
-            let articles = await page.evaluate(this._extractFromPage, source.parsing)
-            for (const scrappedArticle of articles) {
-                const existing = await Article.findOne({
-                    url: scrappedArticle.url
-                })
-                if (!!existing) continue
-                let article = new Article({
-                    ...scrappedArticle,
-                    source: source
-                })
-                await article.save()
-                result.push(article)
-                console.log("Added article " + article.title)
-            }
-            console.log("Extraction finished successfully, added " + result.length + " articles")
-        } catch (e) {
-            console.error(e)
-        }
-
-        browser.close()
-        return result
+        this.extractionRequestPublisher.publish(Buffer.from(JSON.stringify(source)))
     }
 
-    async _extractFromPage(parsing) {
-        const elements = [...document.querySelectorAll(parsing.articleQuery)]
-        let result = []
-        for (el of elements) {
-            let article = {
-                title: el.querySelector(parsing.titleQuery)?.textContent,
-                url: el.querySelector(parsing.urlQuery)?.getAttribute('href'),
-                authors: [...el.querySelectorAll(parsing.authorQuery)]?.map(authorEl => authorEl?.textContent),
-            }
-            result.push(article)
-        }
-        return result
+    _handleResult(articles) {
+
     }
 }
+
 module.exports = SourceService
