@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="aace4b6f-b227-4a91-91de-c7d59f2e16af" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/back/extractor.js" beforeDir="false" afterPath="$PROJECT_DIR$/back/extractor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/back/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/back/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/back/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/src/controllers/ArticleController.js" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/controllers/ArticleController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/src/domain/Article.js" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/domain/Article.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/src/domain/Source.js" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/domain/Source.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/src/rabbitmq/consumers/Consumer.js" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/rabbitmq/consumers/Consumer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/src/rabbitmq/publishers/Publisher.js" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/rabbitmq/publishers/Publisher.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/src/services/SourceService.js" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/services/SourceService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/back/test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/docker/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/HelloWorld.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/HelloWorld.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/router/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/shims-vue.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/tsconfig.json" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1yV2xR74zT8oeF107jFFuXufA0n" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="aace4b6f-b227-4a91-91de-c7d59f2e16af" name="Changes" comment="" />
+      <created>1632322684208</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1632322684208</updated>
+    </task>
+    <servers />
+  </component>
+</project>

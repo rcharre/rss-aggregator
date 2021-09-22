@@ -10,7 +10,9 @@ const schema = new Schema({
         dateParser: {},
         titleQuery: { type: String, required: true },
         authorQuery: String,
-        urlQuery: { type: String, required: true }
+        urlQuery: { type: String, required: true },
+        imageUrlQuery: String,
+        logoUrl: { type: String, required: true },
     }
 })
 

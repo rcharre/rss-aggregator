@@ -7,10 +7,11 @@ let source = new Source({
     name: 'Le Monde - international',
     url: "https://www.lemonde.fr/international/",
     parsing: {
-        articleQuery: ".thread",
+        articleQuery: ".teaser",
         titleQuery: '.teaser__title',
         urlQuery: '.teaser__link',
-        authorQuery: '.meta__author'
+        authorQuery: '.meta__author',
+        imageUrlQuery: null
     }
 })
 

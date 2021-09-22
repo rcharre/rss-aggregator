@@ -20,11 +20,13 @@
   "homepage": "https://github.com/rcharre/scrapping-news#readme",
   "dependencies": {
     "amqplib": "^0.8.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "fs": "0.0.1-security",
     "jest": "^27.2.0",
     "mongodb": "^4.1.2",
     "mongoose": "^6.0.5",
+    "mongoose-paginate-v2": "^1.4.2",
     "node-docker-api": "^1.1.22",
     "puppeteer": "^10.2.0"
   }

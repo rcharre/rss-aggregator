@@ -7,7 +7,7 @@ class Publisher {
     }
 
     publish(message) {
-        amqp.connect(this.host)
+        return amqp.connect(this.host)
             .then(connection =>
                 connection.createChannel()
                     .then(ch => this._send(ch, message))
@@ -16,7 +16,6 @@ class Publisher {
     }
 
     _send(channel, message) {
-        console.log('Send message')
         let ok = channel.assertQueue(this.queue, { durable: false })
         return ok.then(_qok => {
             channel.sendToQueue(this.queue, Buffer.from(message))

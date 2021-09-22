@@ -12,7 +12,7 @@ class Consumer {
     }
 
     _initAmqp(connection) {
-        process.once('SIGINT', connection.close)
+        process.once('SIGINT', () => connection.close())
         connection.createChannel()
             .then(this._initChannel.bind(this))
     }
